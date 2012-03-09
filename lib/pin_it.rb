@@ -1,5 +1,9 @@
 require "pin_it/version"
-require "active_support/core_ext/object/to_query"
+begin
+  require "active_support/core_ext/object/to_query"
+rescue LoadError
+  require "active_support/core_ext/object/conversions"
+end
 
 module PinIt
   module Helper
@@ -10,16 +14,24 @@ module PinIt
                                 "class" => "pin-it-button",
                                 "count-layout" => "horizontal"
     end
-  end
-
-  class Railtie < ::Rails::Railtie
-    initializer "pin_it.view_helpers" do |app|
-      ::ActionView::Base.send :include, PinIt::Helper
+    
+    def pin_it_js
+      IO.read(File.expand_path("../../vendor/assets/javascripts/pin_it.js", __FILE__))
     end
   end
 
-  module Rails
-    class Engine < ::Rails::Engine
+  if defined? ::Rails::Railtie
+    class Railtie < ::Rails::Railtie
+      initializer "pin_it.view_helpers" do |app|
+        ::ActionView::Base.send :include, PinIt::Helper
+      end
+    end
+  end
+
+  if defined? ::Rails::Engine
+    module Rails
+      class Engine < ::Rails::Engine
+      end
     end
   end
 end
