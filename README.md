@@ -1,6 +1,11 @@
 # PinIt
 
-TODO: Write a gem description
+This gem is a Rails plugin for adding a Pinterest.com "Pin It" button
+to your views. 
+
+Pinterest's [“Pin It” Button for Websites](http://pinterest.com/about/goodies/#button_for_websites) page.
+
+NOTE: This gem's authors are not in any way affiliated with Pinterest.
 
 ## Installation
 
