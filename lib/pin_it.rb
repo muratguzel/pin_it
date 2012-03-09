@@ -17,4 +17,9 @@ module PinIt
       ::ActionView::Base.send :include, PinIt::Helper
     end
   end
+
+  module Rails
+    class Engine < ::Rails::Engine
+    end
+  end
 end
