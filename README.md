@@ -35,7 +35,7 @@ Then, in your views, do something like this:
 
     <%= pin_it_button :media => image_url(@photo.url)
                       :description => @photo.description,
-                      :url => photo_url(@photo) %>
+                      :page_url => photo_url(@photo) %>
 
 ### Rails > 3.1 
 
@@ -49,7 +49,7 @@ Then, in your views, do something like this:
 
     <%= pin_it_button media: image_url(@photo.url)
                       description: @photo.description,
-                      url: photo_url(@photo) %>
+                      page_url: photo_url(@photo) %>
 
 
 ## Contributing
