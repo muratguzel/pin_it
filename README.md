@@ -18,7 +18,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After adding the gem to your Rails app and running the bundle command,
+you need to add this line to get the small JavaScript component included. 
+Put it in application.js
+
+    //= require pin_it
+
+Then, in your views, do something like this:
+
+    <%= pin_it_button media: image_url(@photo.url)
+                      description: @photo.description,
+                      url: photo_url(@photo) %>
+
 
 ## Contributing
 
