@@ -33,7 +33,7 @@ In your application layout, include this:
 
 Then, in your views, do something like this:
 
-    <%= pin_it_button :media => image_url(@photo.url)
+    <%= pin_it_button :media => image_url(@photo.url),
                       :description => @photo.description,
                       :url => photo_url(@photo) %>
 
@@ -47,7 +47,7 @@ Put it in application.js
 
 Then, in your views, do something like this:
 
-    <%= pin_it_button media: image_url(@photo.url)
+    <%= pin_it_button media: image_url(@photo.url),
                       description: @photo.description,
                       url: photo_url(@photo) %>
 
