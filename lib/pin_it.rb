@@ -10,7 +10,8 @@ module PinIt
     def pin_it_button(options = {})
       %{<a href="http://pinterest.com/pin/create/button/?url=page_url&media=img_url&description=description" class="pin-it-button" count-layout="horizontal">Pin It</a>}
       query_params = options.slice(:url, :media, :description)
-      content_tag :a, "Pin It", "href" => "http://pinterest.com/pin/create/button/?#{query_params.to_query}", 
+      img = tag :img, :src => "//assets.pinterest.com/images/PinExt.png", :title => "Pin It", :border => "0" 
+      content_tag :a, img, "href" => "http://pinterest.com/pin/create/button/?#{query_params.to_query}", 
                                 "class" => "pin-it-button",
                                 "count-layout" => "horizontal"
     end
