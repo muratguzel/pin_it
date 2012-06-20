@@ -13,7 +13,7 @@ module PinIt
       img = tag :img, :src => "//assets.pinterest.com/images/PinExt.png", :title => "Pin It", :border => "0" 
       content_tag :a, img, "href" => "http://pinterest.com/pin/create/button/?#{query_params.to_query}", 
                                 "class" => "pin-it-button",
-                                "count-layout" => "horizontal"
+                                "count-layout" => "vertical"
     end
     
     def pin_it_js
